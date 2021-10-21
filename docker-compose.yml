@@ -1,10 +1,10 @@
 version: '2'
 services:
-  snake:
-    image: 'avisdocker/flask:new'
+  helloflask:
+    image: 'avisdocker/helloflask:new'
     environment:
       - "PORT:5000"
     ports:
-      - "80:5000"
+      - "5000:5000"
     volumes:
-      - ./:/app
+      - ./:/src
