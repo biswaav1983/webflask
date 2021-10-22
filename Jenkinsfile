@@ -14,7 +14,7 @@ try {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        src = docker.build("avisdocker/helloflask:new")
+        app = docker.build("avisdocker/helloflask:new")
 		}
 
     stage('Post-to-dockerhub') {

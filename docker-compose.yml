@@ -1,7 +1,9 @@
-version: "2"
+version: '2'
 services:
-  web:
-    build: ""
+  helloflask:
+    image: 'avisdocker/helloflask:new'
+    environment:
+      - "PORT:5005"
     ports:
       - "5005:5005"
     volumes:
