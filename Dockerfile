@@ -10,6 +10,10 @@ COPY requirements.txt .
 # install dependencies
 RUN pip install -r requirements.txt
 
+# expose the port
+
+EXPOSE 7007
+
 # copy the content of the local src directory to the working directory
 COPY src .
 

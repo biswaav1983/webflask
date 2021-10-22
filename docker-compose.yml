@@ -3,8 +3,8 @@ services:
   helloflask:
     image: 'avisdocker/helloflask:new'
     environment:
-      - "PORT:5000"
+      - "PORT:7007"
     ports:
-      - "5000:5000"
+      - "7007:7007"
     volumes:
-      - ./:/code
+      - ./src:/code
