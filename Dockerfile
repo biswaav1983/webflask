@@ -1,21 +1,16 @@
-# set base image (host OS)
-FROM python
+FROM python:3.8.3-alpine
 
-# set the working directory in the container
+RUN adduser -D  demouser
+USER demouser
+
+RUN pip install --upgrade pip
+
 WORKDIR /code
 
-# copy the dependencies file to the working directory
-COPY requirements.txt .
+COPY --chown=demouser:demouser requirements.txt .
 
-# install dependencies
-RUN pip install -r requirements.txt
+RUN pip install --user -r requirements.txt
 
-# expose the port
+COPY --chown=demouser:demouser src .
 
-EXPOSE 7007
-
-# copy the content of the local src directory to the working directory
-COPY src .
-
-# command to run on container start
-CMD [ "python", "./app.py" ]
+CMD ["python", "app.py"]
